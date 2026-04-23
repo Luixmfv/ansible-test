@@ -1,0 +1,6 @@
+---
+- name: Verify connectivity to all hosts
+  hosts: all
+  gather_facts: false
+  tasks:
+    - name: Ping the host
