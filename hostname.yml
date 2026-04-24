@@ -3,6 +3,6 @@
   hosts: all
   gather_facts: yes  # Recopila información del sistema automáticamente
   tasks:
-    - name: Mostrar el hostname recopilado por Ansible
+    - name: Mostrar el hostname recopilado por Ansible 222
       ansible.builtin.debug:
         msg: "El hostname de este servidor es: {{ ansible_hostname }}"
