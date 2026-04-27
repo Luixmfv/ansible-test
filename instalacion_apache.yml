@@ -23,6 +23,7 @@
         state: started
         enabled: yes  
 
+  handlers:
     - name: Reiniciar Apache
       service:
         name: "{{ apache_package }}"
