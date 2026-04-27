@@ -22,3 +22,8 @@
         name: "{{ apache_package }}"
         state: started
         enabled: yes  
+
+    - name: Reiniciar Apache
+      service:
+        name: "{{ apache_package }}"
+        state: restarted
