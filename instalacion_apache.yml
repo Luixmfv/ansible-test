@@ -1,0 +1,22 @@
+---
+- name: Instalacion apache
+  hosts: all
+  vars:
+    apache_package: httpd
+  
+  tasks:
+    - name: Asegurar que Apache esté instalado
+      dnf:
+        name: "{{ apache_package }}"
+        state: present
+
+    - name: Crear página web desde archivo HTML
+      copy:                         
+        src: index.html             
+        dest: /var/www/html/index.html
+
+    - name: Asegurar que el servicio esté corriendo
+      service:
+        name: "{{ apache_package }}"
+        state: started
+        enabled: yes
