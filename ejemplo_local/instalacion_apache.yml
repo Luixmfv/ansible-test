@@ -15,15 +15,9 @@
       template:
         src: index.html.j2
         dest: /var/www/html/index.html
-      notify: Reiniciar Apache
 
     - name: Asegurar que el servicio esté corriendo
       service:
         name: "{{ apache_package }}"
         state: started
-        enabled: yes  
-
-    - name: Reiniciar Apache
-      service:
-        name: "{{ apache_package }}"
-        state: restarted
+        enabled: yes 
